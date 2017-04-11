@@ -1,6 +1,5 @@
-%说明：比较绝对阈值法，百分比法，基线漂移法，分段回归法，变点法
-m=100;%循环的次数
-k=81;%抽取试次数
+m=10;%循环的次数
+k=49;%抽取试次数
 p1=0.3;%p1是pp方法的百分比
 p2=0.5;%p2是pp方法的百分比
 alpha1=1.0;%绝对阈值法的阈值1
@@ -14,17 +13,16 @@ onseta2=zeros(1,m);
 onsetb1=zeros(1,m);
 onsetb2=zeros(1,m);
 onsetr=zeros(1,m);
-onsetc=zeros(1,m);
 for i=1:m
 [LRP]=sampleLRP(k,L1,R1);%抽样后得到的LRP
 [onsetp1(1,i)]=pp(LRP,p1);%p1是pp方法的百分比
 [onsetp2(1,i)]=pp(LRP,p2);%p1是pp方法的百分比
 [onseta1(1,i)]=absolute(LRP,alpha1);
 [onseta2(1,i)]=absolute(LRP,alpha2);
-[onsetb1(1,i)]=baseline(LRP,sd1);
-[onsetb2(1,i)]=baseline(LRP,sd2);
-[onsetr(1,i)]=regression(LRP);
-[onsetc(1,i)]=changepoint(LRP)
+[onsetb1]=baseline(LRP,sd1);
+[onsetb2]=baseline(LRP,sd2)
+[onsetr]=regression(LRP);
+
 end
 mp1=mean(onsetp1);
 mp2=mean(onsetp2);
@@ -33,14 +31,4 @@ ma2=mean(onseta2);
 mb1=mean(onsetb1);
 mb2=mean(onsetb2);
 mr=mean(onsetr);
-mc=mean(onsetc)
-result_mean=[mp1,mp2,ma1,ma2,mb1,mb2,mr,mc]
-sp1=std(onsetp1)
-sp2=std(onsetp1);
-sa1=std(onsetp2);
-sa2=std(onseta1);
-sb1=std(onsetb1);
-sb2=std(onsetb2);
-sr=std(onsetr);
-sc=std(onsetc)
-result_std=[sp1,sp2,sa1,sa2,sb1,sb2,sr,sc]
+mm=[mp1,mp2,ma1,ma2,mb1,mb2,mr]

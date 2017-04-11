@@ -1,8 +1,8 @@
-function [onset]=regression(LRP,time)
-
+function [onset]=regression(LRP)
+time=0:2:1000;
 [ma,I]=max(LRP);
 m=I;
-t=time(1,1:m)
+t=time(1,1:m);
 y=LRP(1,1:I);
 my=min(y);
 t1=cell(m);
