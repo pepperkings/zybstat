@@ -1,6 +1,9 @@
 %说明：比较绝对阈值法，百分比法，基线漂移法，分段回归法，变点法
-L1 = csvread('.\data\L1.csv', 1, 1);
-R1 = csvread('.\data\R1.csv', 1, 1);
+L1 = csvread('.\LRP_data\L_huy.csv', 1, 1);
+R1 = csvread('.\LRP_data\R_huy.csv', 1, 1);
+
+L2 = csvread('.\LRP_data\L_sry.csv', 1, 1);
+R2 = csvread('.\LRP_data\R_sry.csv', 1, 1);
 
 m=1%循环的次数
 k=300;%抽取试次数
