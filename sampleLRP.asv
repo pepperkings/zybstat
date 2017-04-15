@@ -1,7 +1,7 @@
 function [LRP]=sampleLRP(k,L,R,D)
-nn=randperm(length(L));
+nn=randperm(109);
 nnn=nn(1,1:k);
-LL=zeros(300,k);
+LL=zeros(501,k);
 for i=1:k
 LL(:,i)=L(:,nnn(i));
 RR(:,i)=R(:,nnn(i));
