@@ -1,6 +1,6 @@
 %说明：比较绝对阈值法，百分比法，基线漂移法，分段回归法，变点法
 m=1%循环的次数
-k=100;%抽取试次数
+k=300;%抽取试次数
 p1=0.1;%p1是pp方法的百分比
 p2=0.2;%p2是pp方法的百分比
 p3=0.3;%p1是pp方法的百分比
@@ -84,8 +84,8 @@ ma15=mean(onseta15);
 
 mb11=mean(onsetb11);
 mb12=mean(onsetb12);
-% mr=mean(onsetr);
-% mc=mean(onsetc);
+ mr1=mean(onsetr1);
+ mc1=mean(onsetc1);
 result_mean_1=[mp11,mp12,mp13,mp14,ma11,ma12,ma13,ma14,ma15,mb11,mb12,mr1,mc1];
 %result_mean_51=[mp1,mp2,mp3,mp4,ma1,ma2,ma3,ma4,ma5,mb1,mb2]%,mr,mc];
 mp21=mean(onsetp21);
@@ -102,8 +102,8 @@ ma25=mean(onseta25);
 
 mb21=mean(onsetb21);
 mb22=mean(onsetb22);
-% mr=mean(onsetr);
-% mc=mean(onsetc);
+ mr2=mean(onsetr2);
+ mc2=mean(onsetc2);
 
 sp21=std(onsetp21);
 sp22=std(onsetp21);
@@ -118,13 +118,13 @@ sa25=std(onseta25);
 
 sb21=std(onsetb21);
 sb22=std(onsetb22);
-% sr=std(onsetr);
-% sc=std(onsetc);
+sr2=std(onsetr2);
+sc2=std(onsetc2);
 % result_mean_1=[mp1,mp2,mp3,mp4,ma1,ma2,ma3,ma4,ma5,mb1,mb2]%,mr,mc];
 % result_std_1=[sp1,sp2,sp3,sp4,sa1,sa2,sa3,sa4,sa5,sb1,sb2]%,sr,sc];
 
 result_mean_2=[mp21,mp22,mp23,mp24,ma21,ma22,ma23,ma24,ma25,mb21,mb22,mr2,mc2];
-result_std_2=[sp21,sp22,sp23,sp24,sa21,sa22,sa23,sa24,sa25,sb21,sb22,sr1,sc2];
+result_std_2=[sp21,sp22,sp23,sp24,sa21,sa22,sa23,sa24,sa25,sb21,sb22,sr2,sc2];
 
 result_diffrence=result_mean_1-result_mean_2
 
