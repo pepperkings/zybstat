@@ -5,7 +5,7 @@ R1 = csvread('.\LRP_data\R_huy.csv', 1, 1);
 L2 = csvread('.\LRP_data\L_sry.csv', 1, 1);
 R2 = csvread('.\LRP_data\R_sry.csv', 1, 1);
 
-m=1%循环的次数
+m=30%循环的次数
 k=300;%抽取试次数
 p1=0.1;%p1是pp方法的百分比
 p2=0.2;%p2是pp方法的百分比
@@ -21,23 +21,42 @@ alpha5=1.0;%绝对阈值法的阈值2
 sd1=2;%基线漂移法的sd
 sd2=2.5;
 D1=1;
-D2=26;
-onsetp1=zeros(1,m);
-onsetp2=zeros(1,m);
-onsetp3=zeros(1,m);
-onsetp4=zeros(1,m);
+D2=51;
+onsetp11=zeros(1,m);
+onsetp12=zeros(1,m);
+onsetp13=zeros(1,m);
+onsetp14=zeros(1,m);
 
-onseta1=zeros(1,m);
-onseta2=zeros(1,m);
-onseta3=zeros(1,m);
-onseta4=zeros(1,m);
-onseta5=zeros(1,m);
+onseta11=zeros(1,m);
+onseta12=zeros(1,m);
+onseta13=zeros(1,m);
+onseta14=zeros(1,m);
+onseta15=zeros(1,m);
 
-onsetb1=zeros(1,m);
-onsetb2=zeros(1,m);
+onsetb11=zeros(1,m);
+onsetb12=zeros(1,m);
 
-onsetr=zeros(1,m);
-onsetc=zeros(1,m);
+onsetr1=zeros(1,m);
+onsetc1=zeros(1,m);
+
+onsetp21=zeros(1,m);
+onsetp22=zeros(1,m);
+onsetp23=zeros(1,m);
+onsetp24=zeros(1,m);
+
+onseta21=zeros(1,m);
+onseta22=zeros(1,m);
+onseta23=zeros(1,m);
+onseta24=zeros(1,m);
+onseta25=zeros(1,m);
+
+onsetb21=zeros(1,m);
+onsetb22=zeros(1,m);
+
+onsetr2=zeros(1,m);
+onsetc2=zeros(1,m);
+
+
 for i=1:m
 [LRP1]=sampleLRP(k,L,R,D1);%抽样后得到的LRP
 [onsetp11(1,i)]=pp(LRP1,p1);%p1是pp方法的百分比

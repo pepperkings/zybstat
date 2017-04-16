@@ -17,7 +17,7 @@ X=t/(2*n);
 d=1:1:length(X);
 n=length(X);
 gg=zeros(1,n);
-for I=2:n-1
+for I=100:n-50
 [gg(1,I)]=find_g(X,Y,I,2);
 end
 [min_g,index]=min(gg(1,2:length(gg)-2));
