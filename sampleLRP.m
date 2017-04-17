@@ -7,4 +7,5 @@ LL(:,i)=L(:,nnn(i));
 RR(:,i)=R(:,nnn(i));
 end
 LRPP=mean(LL')-mean(RR');
-LRP=LRPP(1,D:length(LRPP));
+[maxLRP,index]=max(LRPP)
+LRP=LRPP(1,D:index);

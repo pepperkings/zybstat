@@ -1,5 +1,5 @@
 
- function [onsetc]=changepoint(LRP)
+ function [onsetsc,onsetrc]=changepoint(LRP)
 
 [maxx,ss]=max(LRP);
 Y=roundn(LRP(1,1:ss),-2)';
@@ -14,7 +14,8 @@ for I=2:n-3
 [gg(1,I)]=find_g(X,Y,I,2);
 end
 [min_g,index]=min(gg(1,2:length(gg)-2))
-onsetc=t(1,index+g)
+onsetc=t(1,index)
+onsetrc=t(1,length(LRP)-index_d-1)
 hold on
 plot(d,X,'r.')
 plot(Y,'k*')

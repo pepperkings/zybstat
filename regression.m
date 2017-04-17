@@ -1,4 +1,4 @@
-function [onset]=regression(LRP)
+function [onsets,onsetr]=regression(LRP)
 time=0:2:1000;
 [ma,I]=max(LRP);
 m=I;
@@ -35,9 +35,10 @@ for i=1:m
     ss(1,i)=[s1{i}+s2{i}];
 end
 %ss=[s{1},s{2},s{3},s{4},s{5}];
-min_s=min(ss)
-k=find(ss==min_s)
-onset=2*k
+[min_s,k]=min(ss)
+
+onsets=t(1,k);
+onsetr=t(1,length(LRP)-k-1)
 y1_k=[fy1{k}];
 t1_k=[t1{k}];
 y2_k=[fy2{k}];
