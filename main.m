@@ -5,7 +5,7 @@ R1 = csvread('.\LRP_data\R_huy.csv', 1, 1);
 L2 = csvread('.\LRP_data\L_sry.csv', 1, 1);
 R2 = csvread('.\LRP_data\R_sry.csv', 1, 1);
 
-m=30%循环的次数
+m=1%循环的次数
 k=250;%抽取试次数
 p1=0.1;%p1是pp方法的百分比
 p2=0.2;%p2是pp方法的百分比
@@ -93,8 +93,8 @@ for i=1:m
 
 [onsetb21(1,i)]=baseline(LRP2,sd1);
 [onsetb22(1,i)]=baseline(LRP2,sd2);
-  [onsetr2(1,i)]=regression(LRP2);
- [onsetc2(1,i)]=changepoint(LRP2);
+[onsetr2(1,i)]=regression(LRP2);
+[onsetc2(1,i)]=changepoint(LRP2);
 
 
  end

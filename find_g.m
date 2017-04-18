@@ -1,6 +1,3 @@
-% XX=[0,2,4,6,8,10,12,14,16,18,20,22;];
-% Ya=[2.27692298496089,2.44617139063115,3.89713178123585,4.02345782832729,4.29482862297582,4.31709948006086,39.9502220488384,45.0344460805029,51.4387443596564,57.3815584570930,63.7655167881490,69.7951999011371;];
-% YY=roundn(Ya,-2)';
 
  function [g]=find_g(X,Y,i,h)
 % X=XX;
@@ -61,11 +58,11 @@ end
        g1=mi_n;
     elseif  lk==2 && X(1,i-1)<=k(1,1)&& k(1,1)<=X(1,i)  &&( k(2,1)<X(1,i-1) || k(2,1)>X(1,i))
               T1=X(1,i-1);
-              [FF1,MM,delta]=myfunction(X,Y,i,T1);
+              [FF1,delta]=myfunction(X,Y,i,T1);
               T2=X(1,i);
-              [FF2,MM,delta]=myfunction(X,Y,i,T2);
+              [FF2,delta]=myfunction(X,Y,i,T2);
               T3=k(1,1);
-              [FF3,MM,delta]=myfunction(X,Y,i,T3);
+              [FF3,delta]=myfunction(X,Y,i,T3);
               FFF1=vpa(FF1,4);
               FFF2=vpa(FF2,4);
               FFF3=vpa(FF3,4);
@@ -81,11 +78,11 @@ end
               
       elseif lk==2 && X(1,i-1)<=k(2,1) && k(2,1)<=X(1,i) &&(k(1,1)<X(1,i-1) || k(1,1)>X(1,i))
               T1=X(1,i-1);
-              [FF1,MM,delta]=myfunction(X,Y,i,T1);
+              [FF1,delta]=myfunction(X,Y,i,T1);
               T2=X(1,i);
-              [FF2,MM,delta]=myfunction(X,Y,i,T2);
+              [FF2,delta]=myfunction(X,Y,i,T2);
               T4=k(2,1);
-              [FF4,MM,delta]=myfunction(X,Y,i,T4);
+              [FF4,delta]=myfunction(X,Y,i,T4);
               FFF1=vpa(FF1,4);
               FFF2=vpa(FF2,4); 
               FFF4=vpa(FF4,4);
@@ -98,13 +95,13 @@ end
      g3=mi_n;
     elseif lk==2 && X(1,i-1)<=k(1,1) && k(1,1)<=X(1,i) && X(1,i-1)<=k(2,1) && k(2,1)<=X(1,i)  
                T1=X(1,i-1);
-              [FF1,MM,delta]=myfunction(X,Y,i,T1);
+              [FF1,delta]=myfunction(X,Y,i,T1);
               T2=X(1,i);
-              [FF2,MM,delta]=myfunction(X,Y,i,T2);
+              [FF2,delta]=myfunction(X,Y,i,T2);
               T3=k(1,1);
-              [FF3,MM,delta]=myfunction(X,Y,i,T3);
+              [FF3,delta]=myfunction(X,Y,i,T3);
               T4=k(2,1);
-              [FF4,MM,delta]=myfunction(X,Y,i,T4);
+              [FF4,delta]=myfunction(X,Y,i,T4);
               FFF1=vpa(FF1,4);
               FFF2=vpa(FF2,4);
               FFF3=vpa(FF3,4);
@@ -119,9 +116,9 @@ end
      g4=mi_n;
     elseif lk==2 &&( X(1,i-1)>k(1,1) || k(1,1)>X(1,i) )&&( X(1,i-1)>k(2,1) || k(2,1)>X(1,i) )
               T1=X(1,i-1);
-              [FF1,MM,delta]=myfunction(X,Y,i,T1);
+              [FF1,delta]=myfunction(X,Y,i,T1);
               T2=X(1,i);
-              [FF2,MM,delta]=myfunction(X,Y,i,T2);
+              [FF2,delta]=myfunction(X,Y,i,T2);
                FFF1=vpa(FF1,4);
                FFF2=vpa(FF2,4); 
               F1=double(FFF1);
